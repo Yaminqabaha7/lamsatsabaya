@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة تحكم الأدمن | Lamset Jamal Group</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+</head>
+<body class="lj-admin-body">
+
+  <div id="lj-admin-login" class="lj-container" style="max-width:420px;padding-top:80px" hidden>
+    <form id="lj-admin-login-form" class="lj-form">
+      <h1>تسجيل دخول الأدمن</h1>
+      <label>البريد الإلكتروني</label>
+      <input type="email" name="email" required>
+      <label>كلمة المرور</label>
+      <input type="password" name="password" required>
+      <p id="lj-admin-login-error" style="color:#c0392b;font-size:.85rem"></p>
+      <button type="submit" class="lj-btn lj-btn-primary lj-btn-block">دخول</button>
+    </form>
+  </div>
+
+  <div id="lj-order-modal" class="lj-order-modal" hidden>
+    <div class="lj-order-modal-backdrop"></div>
+    <div class="lj-order-modal-panel">
+      <button type="button" class="lj-order-modal-close" aria-label="إغلاق">&times;</button>
+      <div id="lj-order-modal-body"></div>
+    </div>
+  </div>
+
+  <div class="lj-admin-shell">
+    <div class="lj-admin-sidebar-backdrop" id="lj-admin-sidebar-backdrop"></div>
+    <aside class="lj-admin-sidebar">
+      <div class="lj-admin-logo"><img src="images/2.jpeg" alt="لمسة جمال Group"></div>
+      <nav class="lj-admin-nav" id="lj-admin-nav">
+        <a href="#overview" class="active" data-section="overview"><span class="lj-icon-slot" data-icon="chart"></span> نظرة عامة</a>
+        <a href="orders.html"><span class="lj-icon-slot" data-icon="receipt"></span> الطلبات</a>
+        <a href="#inventory" data-section="inventory"><span class="lj-icon-slot" data-icon="box"></span> المخزون والمنتجات</a>
+        <a href="#customers" data-section="customers"><span class="lj-icon-slot" data-icon="users"></span> العملاء</a>
+        <a href="#settings" data-section="settings"><span class="lj-icon-slot" data-icon="gear"></span> الإعدادات</a>
+      </nav>
+      <div class="lj-admin-sidebar-bottom">
+        <a href="index.html" target="_blank" rel="noopener" class="lj-btn lj-btn-primary lj-btn-block">عرض المتجر المباشر</a>
+        <a href="#" class="lj-admin-side-link">مركز المساعدة</a>
+        <a href="index.html" id="lj-admin-logout" class="lj-admin-side-link">تسجيل الخروج</a>
+      </div>
+    </aside>
+
+    <div class="lj-admin-main">
+      <header class="lj-admin-topbar">
+        <button type="button" class="lj-topbar-icon lj-admin-menu-btn" id="lj-admin-menu-btn" aria-label="القائمة">
+          <svg class="lj-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+        <input type="search" class="lj-admin-search" placeholder="ابحث في لوحة التحكم...">
+        <div class="lj-admin-topbar-icons">
+          <span class="lj-topbar-icon lj-icon-slot" data-icon="bell"></span>
+          <button type="button" class="lj-topbar-icon lj-theme-toggle" aria-label="تبديل الوضع الداكن/الفاتح">
+            <svg class="lj-icon lj-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+            <svg class="lj-icon lj-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.7A8.5 8.5 0 0 1 9.3 3.5a8.5 8.5 0 1 0 11.2 11.2Z" fill="currentColor" stroke="none"/></svg>
+          </button>
+          <span class="lj-admin-avatar">A</span>
+        </div>
+      </header>
+
+      <main class="lj-admin-content">
+
+        <section id="overview" class="lj-admin-section">
+          <h1>نظرة عامة</h1>
+          <div class="lj-admin-stats" id="lj-admin-stats"></div>
+
+          <div class="lj-admin-section-head">
+            <h2>إدارة المتاجر</h2>
+            <a href="#inventory">إدارة الكل ←</a>
+          </div>
+          <div class="lj-admin-stores" id="lj-admin-stores"></div>
+
+          <div class="lj-admin-section-head">
+            <h2>الطلبات الأخيرة <span class="lj-admin-count" id="lj-admin-orders-count-overview"></span></h2>
+            <a href="orders.html">عرض الكل ←</a>
+          </div>
+          <div class="lj-admin-table-wrap">
+            <table class="lj-admin-table" id="lj-admin-orders-preview"></table>
+          </div>
+          <div class="lj-orders-cards" id="lj-admin-orders-preview-cards"></div>
+        </section>
+
+        <section id="inventory" class="lj-admin-section">
+          <h1>المخزون والمنتجات</h1>
+          <div class="lj-admin-grid-2">
+            <div class="lj-admin-card">
+              <h3>إدارة الفئات</h3>
+              <form id="lj-admin-cat-form" class="lj-admin-inline-form">
+                <select id="lj-admin-cat-store"></select>
+                <input type="text" id="lj-admin-cat-input" placeholder="اسم الفئة الجديدة" required>
+                <button type="submit" class="lj-btn lj-btn-primary">إضافة فئة</button>
+              </form>
+              <ul class="lj-admin-list" id="lj-admin-cat-list"></ul>
+            </div>
+            <div class="lj-admin-card">
+              <h3>إضافة منتج سريع</h3>
+              <form id="lj-admin-product-form" class="lj-admin-stack-form">
+                <select id="lj-admin-product-store" required></select>
+                <select id="lj-admin-product-category" required></select>
+                <input type="text" id="lj-admin-product-name" placeholder="اسم المنتج" required>
+                <input type="number" id="lj-admin-product-price" placeholder="السعر (₪)" min="0" required>
+                <textarea id="lj-admin-product-desc" placeholder="وصف المنتج" rows="3"></textarea>
+                <label for="lj-admin-product-image">صورة المنتج</label>
+                <input type="file" id="lj-admin-product-image" accept="image/*">
+                <button type="submit" class="lj-btn lj-btn-primary lj-btn-block">إضافة المنتج</button>
+              </form>
+            </div>
+          </div>
+          <div class="lj-admin-card">
+            <h3>مخزون المنتجات</h3>
+            <input type="text" id="lj-admin-product-search" class="lj-search-input" placeholder="ابحث باسم المنتج أو المتجر..." style="margin-bottom:14px">
+            <ul class="lj-admin-list" id="lj-admin-product-list"></ul>
+          </div>
+        </section>
+
+        <section id="customers" class="lj-admin-section">
+          <h1>العملاء</h1>
+          <div class="lj-admin-table-wrap">
+            <table class="lj-admin-table" id="lj-admin-customers-table"></table>
+          </div>
+        </section>
+
+        <section id="settings" class="lj-admin-section">
+          <h1>الإعدادات</h1>
+          <div class="lj-admin-card" id="lj-admin-settings-card"></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="js/db.js"></script>
+  <script src="js/admin-common.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/admin.js"></script>
+  <script>document.querySelectorAll('.lj-icon-slot').forEach(el => el.innerHTML = LJ_icon(el.dataset.icon));</script>
+</body>
+</html>

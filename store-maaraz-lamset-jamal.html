@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>معرض لمسة جمال | Maaraz Lamset Jamal</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+</head>
+<body class="has-mobile-nav" data-store-id="maaraz-lamset-jamal">
+
+  <header id="lj-header"></header>
+  <div id="lj-banner"></div>
+
+  <div class="lj-container">
+    <section class="lj-filters">
+      <div class="lj-filters-row">
+        <input type="text" id="lj-search" class="lj-search-input" data-i18n-ph="search_ph" placeholder="ابحث عن منتج...">
+        <div class="lj-price-filter">
+          <span data-i18n="price_filter">الفلترة حسب السعر</span>
+          <input type="number" id="lj-price-min" data-i18n-ph="from" placeholder="من">
+          <input type="number" id="lj-price-max" data-i18n-ph="to" placeholder="إلى">
+          <button class="lj-btn lj-btn-ghost" id="lj-price-apply" data-i18n="apply">تطبيق</button>
+        </div>
+      </div>
+      <div class="lj-categories" id="lj-categories"></div>
+    </section>
+
+    <section class="lj-section" style="padding-top:12px">
+      <div id="lj-products-area">
+        <div id="lj-product-carousel"></div>
+        <p id="lj-empty-msg" class="lj-empty-msg" data-i18n="no_results" style="display:none">لا توجد منتجات مطابقة</p>
+        <div id="lj-product-grid" class="lj-product-grid"></div>
+      </div>
+    </section>
+  </div>
+
+  <div id="lj-promo"></div>
+
+  <footer class="lj-footer" id="lj-footer"></footer>
+  <div id="lj-mobile-nav-root"></div>
+
+  <script src="js/data.js"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="js/db.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/store.js"></script>
+</body>
+</html>
