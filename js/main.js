@@ -15,7 +15,7 @@
   const HOME_CARD_META = {
     "lamset-jamal": { color: "#16342b", colorDark: "#5aa885", icon: "lipstick", tag: "Beauty & Cosmetics", logo: "images/2.jpeg" },
     "lamset-sabaya": { color: "#8E5FA6", colorDark: "#b891ce", icon: "dress", tag: "Fashion & Accessories", logo: "images/1.jpeg" },
-    "maaraz-lamset-jamal": { color: "#1C1C1E", colorDark: "#cfa96e", icon: "gift", tag: "Gifts & Perfumes", logo: "images/3.jpeg" }
+    "maaraz-lamset-jamal": { color: "#1C1C1E", colorDark: "#cfa96e", icon: "gift", tag: "Gifts", logo: "images/3.jpeg" }
   };
 
   function renderStoreCards() {
@@ -74,23 +74,9 @@
     }
   }
 
-  function bindNewsletter() {
-    const form = document.getElementById("lj-newsletter-form");
-    if (!form) return;
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const btn = form.querySelector("button");
-      const original = btn.textContent;
-      btn.innerHTML = LJ_icon("check") + " " + LJ_t("newsletter_btn");
-      form.reset();
-      setTimeout(() => (btn.textContent = original), 1400);
-    });
-  }
-
   LJ_onReady(() => {
     renderStoreCards();
     renderContact();
-    bindNewsletter();
     LJ_applyLang(LJ_getLang());
     LJ_initHeaderSearch();
   });

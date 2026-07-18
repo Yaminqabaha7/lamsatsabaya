@@ -70,6 +70,11 @@
           <h4>${LJ_storeField(store, "name")}</h4>
           <p>الشارع الرئيسي - دخلة الصحة القديمة</p>
           <p>يومياً: 9:00ص - 11:00م</p>
+          ${store.facebook || store.instagram ? `
+            <div class="lj-footer-social">
+              ${store.facebook ? `<a href="${store.facebook}" target="_blank" rel="noopener" aria-label="Facebook">f</a>` : ""}
+              ${store.instagram ? `<a href="${store.instagram}" target="_blank" rel="noopener" aria-label="Instagram">◎</a>` : ""}
+            </div>` : ""}
         </div>
         <div>
           <h4 data-i18n="other_stores">${LJ_t("other_stores")}</h4>

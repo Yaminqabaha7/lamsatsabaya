@@ -320,10 +320,13 @@
       <form class="lj-admin-settings-row lj-admin-settings-form" data-store-id="${s.id}">
         <div class="lj-admin-store-avatar" style="background:${s.theme.primary}">${s.name.trim().charAt(0)}</div>
         <div style="flex:1">
-          <h4>${s.name} <span class="lj-admin-muted">· واتساب: ${s.whatsapp}</span></h4>
+          <h4>${s.name}</h4>
           <div class="lj-admin-inline-form">
             <input type="text" class="lj-admin-settings-address" value="${s.address}" placeholder="العنوان" required>
             <input type="text" class="lj-admin-settings-hours" value="${s.hours}" placeholder="أوقات الدوام" required>
+            <input type="text" class="lj-admin-settings-whatsapp" value="${s.whatsapp}" placeholder="رقم الواتساب (بدون + أو أصفار، مثال: 970599111222)" required>
+            <input type="text" class="lj-admin-settings-facebook" value="${s.facebook || ""}" placeholder="رابط فيسبوك (اختياري)">
+            <input type="text" class="lj-admin-settings-instagram" value="${s.instagram || ""}" placeholder="رابط انستجرام (اختياري)">
             <button type="submit" class="lj-btn lj-btn-primary">حفظ</button>
           </div>
         </div>
@@ -338,11 +341,14 @@
         const storeId = form.dataset.storeId;
         const address = form.querySelector(".lj-admin-settings-address").value.trim();
         const hours = form.querySelector(".lj-admin-settings-hours").value.trim();
+        const whatsapp = form.querySelector(".lj-admin-settings-whatsapp").value.trim();
+        const facebook = form.querySelector(".lj-admin-settings-facebook").value.trim();
+        const instagram = form.querySelector(".lj-admin-settings-instagram").value.trim();
         const btn = form.querySelector('button[type="submit"]');
         btn.disabled = true;
         const original = btn.textContent;
         try {
-          await LJ_updateStoreDetails(storeId, { address, hours });
+          await LJ_updateStoreDetails(storeId, { address, hours, whatsapp, facebook, instagram });
           btn.textContent = "تم الحفظ ✓";
         } catch (err) {
           alert("تعذر حفظ التعديل");

@@ -245,7 +245,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ---------------- Sections ---------------- */
 .lj-section { padding: 72px 0; }
 .lj-section-title { text-align: center; margin-bottom: 12px; font-size: clamp(1.7rem, 3vw, 2.4rem); color: var(--store-heading); font-weight: 800; }
-.lj-section-sub { text-align: center; color: var(--muted); max-width: 640px; margin-inline: auto 1.5em; }
+.lj-section-sub { text-align: center; color: var(--muted); max-width: 640px; margin-inline: auto; margin-bottom: 1.5em; }
 .lj-section-rule {
   width: 90px; height: 4px; border-radius: 999px; margin: 0 auto 40px;
   background: linear-gradient(90deg, transparent, var(--secondary), transparent);
@@ -356,11 +356,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 .lj-contact-panel .lj-section-sub { color: rgba(255,255,255,.82); }
 .lj-contact-cta-row {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px;
-  margin-top: 28px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
-  backdrop-filter: blur(8px); border-radius: var(--radius-lg); padding: 12px 12px 12px 22px;
-  max-width: 560px; margin-inline: auto;
+  margin-top: 28px;
 }
-.lj-contact-email { flex: 1; min-width: 200px; text-align: start; font-weight: 600; color: rgba(255,255,255,.9); }
 .lj-contact-cta-row .lj-btn { flex: 0 0 auto; }
 
 /* ---------------- Footer ---------------- */

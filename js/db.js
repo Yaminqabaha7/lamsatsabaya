@@ -37,6 +37,8 @@ async function LJ_fetchDBOnce() {
       address: s.address,
       hours: s.hours,
       whatsapp: s.whatsapp,
+      facebook: s.facebook || "",
+      instagram: s.instagram || "",
       categories: s.categories || [],
       theme: s.theme,
       themeDark: s.theme_dark,
@@ -206,15 +208,18 @@ async function LJ_deleteCategory(storeId, name) {
   store.categories = categories;
 }
 
-async function LJ_updateStoreDetails(storeId, { address, hours }) {
+async function LJ_updateStoreDetails(storeId, { address, hours, whatsapp, facebook, instagram }) {
   const store = LJ_DB.stores[storeId];
   if (!store) return;
 
-  const { error } = await LJ_SB.from("stores").update({ address, hours }).eq("id", storeId);
+  const { error } = await LJ_SB.from("stores").update({ address, hours, whatsapp, facebook, instagram }).eq("id", storeId);
   if (error) throw error;
 
   store.address = address;
   store.hours = hours;
+  store.whatsapp = whatsapp;
+  store.facebook = facebook;
+  store.instagram = instagram;
 }
 
 async function LJ_addProduct(storeId, { name, price, category, description = "", image }) {
