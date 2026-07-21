@@ -834,8 +834,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .lj-admin-store-avatar {
   width: 46px; height: 46px; border-radius: 50%; color: #fff; font-weight: 800; font-family: var(--font-display);
-  display: flex; align-items: center; justify-content: center; font-size: 1.05rem;
+  display: flex; align-items: center; justify-content: center; font-size: 1.05rem; overflow: hidden;
 }
+.lj-admin-store-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .lj-admin-store-info h4 { margin: 0 0 2px; font-size: 1rem; }
 .lj-admin-store-info span { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 .lj-admin-store-metrics { display: flex; gap: 20px; padding: 10px 0; border-top: 1px solid var(--outline-variant); border-bottom: 1px solid var(--outline-variant); }
