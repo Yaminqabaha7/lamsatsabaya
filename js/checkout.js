@@ -3,6 +3,8 @@
    ============================================================ */
 
 (async function () {
+  LJ_setFavicon(new URLSearchParams(location.search).get("store") || LJ_DEFAULT_STORE_ID);
+
   try {
     await LJ_initDB();
   } catch (err) {

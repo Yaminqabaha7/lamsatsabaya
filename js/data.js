@@ -10,6 +10,27 @@ const LJ_DB = { stores: {} };
 /* المتجر الافتراضي لما يفتح الزائر رابط بدون ما يحدد ?store= (مثلاً /cart مباشرة) */
 const LJ_DEFAULT_STORE_ID = "lamset-jamal";
 
+/* شعارات المتاجر (نفس الصور المستخدمة بكروت الصفحة الرئيسية ولوحة الأدمن) */
+const LJ_STORE_LOGOS = {
+  "lamset-jamal": "images/2.jpeg",
+  "lamset-sabaya": "images/1.jpeg",
+  "maaraz-lamset-jamal": "images/3.jpeg"
+};
+
+/* بيحط شعار المتجر كأيقونة تبويب المتصفح (favicon) */
+function LJ_setFavicon(storeId) {
+  const href = LJ_STORE_LOGOS[storeId];
+  if (!href) return;
+  let link = document.querySelector('link[rel="icon"]');
+  if (!link) {
+    link = document.createElement("link");
+    link.rel = "icon";
+    document.head.appendChild(link);
+  }
+  link.type = "image/jpeg";
+  link.href = href;
+}
+
 /* صورة بديلة تظهر تلقائياً إذا تعذر تحميل صورة المنتج (بدون اتصال إنترنت مثلاً) */
 function LJ_placeholderImg() {
   return "data:image/svg+xml;utf8," + encodeURIComponent(

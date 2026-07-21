@@ -6,13 +6,6 @@
    ============================================================ */
 
 (function () {
-  /* نفس شعارات المتاجر المستخدمة بالصفحة الرئيسية (main.js) */
-  const STORE_LOGOS = {
-    "lamset-jamal": "images/2.jpeg",
-    "lamset-sabaya": "images/1.jpeg",
-    "maaraz-lamset-jamal": "images/3.jpeg"
-  };
-
   function storeOrderCount(orders, storeId) {
     return orders.filter(o => o.storeId === storeId).length;
   }
@@ -54,7 +47,7 @@
     const wrap = document.getElementById("lj-admin-stores");
     wrap.innerHTML = Object.values(LJ_DB.stores).map(store => `
       <div class="lj-admin-store-card">
-        <div class="lj-admin-store-avatar" style="background:${store.theme.primary}"><img src="${STORE_LOGOS[store.id]}" alt="${store.name}"></div>
+        <div class="lj-admin-store-avatar" style="background:${store.theme.primary}"><img src="${LJ_STORE_LOGOS[store.id]}" alt="${store.name}"></div>
         <div class="lj-admin-store-info">
           <h4>${store.name}</h4>
           <span>${store.tagline}</span>
@@ -325,7 +318,7 @@
     const wrap = document.getElementById("lj-admin-settings-card");
     wrap.innerHTML = Object.values(LJ_DB.stores).map(s => `
       <form class="lj-admin-settings-row lj-admin-settings-form" data-store-id="${s.id}">
-        <div class="lj-admin-store-avatar" style="background:${s.theme.primary}"><img src="${STORE_LOGOS[s.id]}" alt="${s.name}"></div>
+        <div class="lj-admin-store-avatar" style="background:${s.theme.primary}"><img src="${LJ_STORE_LOGOS[s.id]}" alt="${s.name}"></div>
         <div style="flex:1">
           <h4>${s.name}</h4>
           <div class="lj-admin-inline-form">

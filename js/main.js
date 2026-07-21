@@ -13,9 +13,9 @@
   /* عرض مخصص لبطاقات المتاجر بالصفحة الرئيسية: ترتيب وألوان وأيقونات وتصنيف كل متجر */
   const HOME_CARD_ORDER = ["maaraz-lamset-jamal", "lamset-sabaya", "lamset-jamal"];
   const HOME_CARD_META = {
-    "lamset-jamal": { color: "#16342b", colorDark: "#5aa885", icon: "lipstick", tag: "Beauty & Cosmetics", logo: "images/2.jpeg" },
-    "lamset-sabaya": { color: "#8E5FA6", colorDark: "#b891ce", icon: "dress", tag: "Fashion & Accessories", logo: "images/1.jpeg" },
-    "maaraz-lamset-jamal": { color: "#1C1C1E", colorDark: "#cfa96e", icon: "gift", tag: "Gifts", logo: "images/3.jpeg" }
+    "lamset-jamal": { color: "#16342b", colorDark: "#5aa885", icon: "lipstick", tag: "Beauty & Cosmetics" },
+    "lamset-sabaya": { color: "#8E5FA6", colorDark: "#b891ce", icon: "dress", tag: "Fashion & Accessories" },
+    "maaraz-lamset-jamal": { color: "#1C1C1E", colorDark: "#cfa96e", icon: "gift", tag: "Gifts" }
   };
 
   function renderStoreCards() {
@@ -32,7 +32,7 @@
       return `
       <article class="lj-store-card">
         <div class="lj-store-card-top" style="background:${meta.color}">
-          <img class="lj-store-card-logo" src="${meta.logo}" alt="${LJ_storeField(store, "name")}">
+          <img class="lj-store-card-logo" src="${LJ_STORE_LOGOS[id]}" alt="${LJ_storeField(store, "name")}">
         </div>
         <div class="lj-store-card-body">
           <span class="lj-store-tag" style="color:${accent}">${meta.tag}</span>

@@ -4,6 +4,8 @@
    ============================================================ */
 
 (async function () {
+  LJ_setFavicon(document.body.getAttribute("data-store-id"));
+
   try {
     await LJ_initDB();
   } catch (err) {
@@ -19,12 +21,6 @@
   }
 
   LJ_applyStoreTheme(storeId);
-
-  const STORE_HERO_LOGOS = {
-    "lamset-jamal": "images/2.jpeg",
-    "lamset-sabaya": "images/1.jpeg",
-    "maaraz-lamset-jamal": "images/3.jpeg"
-  };
 
   const CATEGORY_ICONS = {
     "الكل": "sparkle", "مكياج": "lipstick", "عناية بالبشرة": "droplet", "عطور": "perfume", "أدوات تجميل": "brush",
@@ -112,7 +108,7 @@
     const bannerEl = document.getElementById("lj-banner");
     if (!bannerEl) return;
     const otherStores = Object.values(LJ_DB.stores).filter(s => s.id !== storeId);
-    const heroImage = STORE_HERO_LOGOS[storeId];
+    const heroImage = LJ_STORE_LOGOS[storeId];
     bannerEl.innerHTML = `
       <div class="lj-store-hero" style="background-image:url('${heroImage}')">
         <div class="lj-store-hero-overlay"></div>
