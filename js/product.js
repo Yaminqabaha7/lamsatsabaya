@@ -68,8 +68,8 @@
       <div class="lj-container lj-footer-grid">
         <div>
           <h4>${LJ_storeField(store, "name")}</h4>
-          <p>الشارع الرئيسي - دخلة الصحة القديمة</p>
-          <p>يومياً: 9:00ص - 11:00م</p>
+          <p>${store.address}</p>
+          <p>${store.hours}</p>
           ${store.facebook || store.instagram ? `
             <div class="lj-footer-social">
               ${store.facebook ? `<a href="${store.facebook}" target="_blank" rel="noopener" aria-label="Facebook">f</a>` : ""}
