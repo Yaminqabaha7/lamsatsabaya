@@ -5,4 +5,8 @@ where id = 'lamset-sabaya';
 
 update stores
 set whatsapp = '970599979155'
-where id in ('lamset-jamal', 'maaraz-lamset-jamal');
+where id = 'lamset-jamal';
+
+update stores
+set whatsapp = '972569873430'
+where id = 'maaraz-lamset-jamal';
